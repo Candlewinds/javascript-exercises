@@ -1,19 +1,21 @@
-// const ages = [3, 10, 18, 20];
+// const ages = [32, 33, 16, 40];
+// const result = ages.filter(checkAdult);
 
-// ages.some(checkAdult);
 // function checkAdult(age) {
-//   return age > 18;
+//   return age >= 18;
 // }
 
-const removeFromArray = function (rawArray, remove) {
-    let cleanedArray = [];
-    for (const entry of rawArray) {
-        if (entry.some(remove)) continue;
-        else cleanedArray += entry;
-    }
-};
 
-console.log(removeFromArray([1, 2, 3, 4], 3));
+// const removeFromArray = function() {
+// };
+
+function removeFromArray(rawArray, ...remove) {
+    return rawArray.filter(function(x) {
+        return !remove.includes(x);
+    });
+}
+
+console.log(removeFromArray([1,2,3,4], 1, 3))
 
 // Do not edit below this line
 module.exports = removeFromArray;
